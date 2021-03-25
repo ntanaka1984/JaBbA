@@ -8033,15 +8033,20 @@ filter.loose = function(gg, cov, l, purity=NULL, ploidy=NULL, field="ratio", PTH
     if(verbose) message("Calculating waviness around loose end")
     rel[, waviness := max(.waviness(start[fused], ratio[fused]), .waviness(start[!fused], ratio[!fused]), na.rm=T), by=subject.id]
 
-    ## prep glm input matrix
     if(verbose) message("Prepping GLM input matrix")
     glm.in = melt(rel[(in.quant.r),], id.vars=c("leix", "fused"), measure.vars=c("tum.counts", "norm.counts"), value.name="counts")[, tumor := variable=="tum.counts"]
+    if(verbose) message("Prepping GLM input matrix 2")
     glm.in[, ix := 1:.N, by=leix]
+    if(verbose) message("Prepping GLM input matrix 3")
     rel2 = copy(glm.in)
+    if(verbose) message("Prepping GLM input matrix 3")
     setnames(glm.in, "leix", "leix2")
+    if(verbose) message("Prepping GLM input matrix 4")
 
     ## calculate residuals from glm 
     rel2[, residual := .mod(glm.in[leix2==leix[1],]), by=leix]
+    if(verbose) message("Prepping GLM input matrix 5")
+
 
     ## evaluate KS-test on residuals and calculate effect size
     ## effect will be from KS test on residuals
