@@ -8042,7 +8042,10 @@ filter.loose = function(gg, cov, l, purity=NULL, ploidy=NULL, field="ratio", PTH
     if(verbose) message("Prepping GLM input matrix 3")
     setnames(glm.in, "leix", "leix2")
     if(verbose) message("Prepping GLM input matrix 4")
-
+    print(glm.in)
+    print(leix)
+    print(leix2)
+    
     ## calculate residuals from glm 
     rel2[, residual := .mod(glm.in[leix2==leix[1],]), by=leix]
     if(verbose) message("Prepping GLM input matrix 5")
