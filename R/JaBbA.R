@@ -8045,7 +8045,7 @@ filter.loose = function(gg, cov, l, purity=NULL, ploidy=NULL, field="ratio", PTH
     print(glm.in)
     print(leix)
     print(leix2)
-    
+    save.image()
     ## calculate residuals from glm 
     rel2[, residual := .mod(glm.in[leix2==leix[1],]), by=leix]
     if(verbose) message("Prepping GLM input matrix 5")
