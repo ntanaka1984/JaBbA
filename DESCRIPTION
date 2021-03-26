@@ -33,7 +33,7 @@ Remotes:
   github::mskilab/gTrack,
   github::mskilab/gGnome,
   github::mskilab/Ppurple,
-  bitbucket:sequenza_tools/sequenza
+  bitbucket:sequenzatools/sequenza
 Suggests:  
   testthat (>= 2.0)
 License: GPL-2
