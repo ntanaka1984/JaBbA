@@ -32,7 +32,7 @@ Remotes:
   github::mskilab/gUtils,
   github::mskilab/gTrack,
   github::mskilab/gGnome,
-  github::mskilab/Ppurple,
+  github::mskilab/Ppurple
 Suggests:  
   testthat (>= 2.0)
 License: GPL-2
