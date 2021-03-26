@@ -8043,8 +8043,9 @@ filter.loose = function(gg, cov, l, purity=NULL, ploidy=NULL, field="ratio", PTH
     setnames(glm.in, "leix", "leix2")
     if(verbose) message("Prepping GLM input matrix 4")
     print(glm.in)
-    write.table(glm.in, sep="\t", quote=F, "./tmp.txt")
-    save.image()
+    write.table(glm.in, sep="\t", quote=F, "./tmp_glm.txt")
+    write.table(rel2, sep="\t", quote=F, "./tmp_rel2.txt")
+    save( list=ls(), file="all.dat" )
     ## calculate residuals from glm 
     rel2[, residual := .mod(glm.in[leix2==leix[1],]), by=leix]
     if(verbose) message("Prepping GLM input matrix 5")
