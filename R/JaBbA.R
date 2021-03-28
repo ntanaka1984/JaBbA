@@ -3359,7 +3359,7 @@ jbaMIP = function(adj, # binary n x n adjacency matrix ($adj output of karyograp
             return(out)
         }, args, mc.cores = mc.cores, mc.preschedule = FALSE)
 
-        ## saveRDS(sols, "raw.sols.rds")
+        saveRDS(sols, "raw.sols.rds")
         out = list()
         ## scalar fields --> length(cluster) vector
         for (f in c('residual', 'nll.cn', 'nll.opt', 'gap.cn', 'slack.prior')){
